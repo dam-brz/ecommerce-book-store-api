@@ -2,10 +2,7 @@ package com.dambrz.ecommercbookstoreapi.controller;
 
 import com.dambrz.ecommercbookstoreapi.model.User;
 import com.dambrz.ecommercbookstoreapi.service.UserService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +20,10 @@ public class UserController {
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getListOfUsers();
+    }
+
+    @PostMapping
+    public void addUser(@RequestBody User user) {
+        userService.addUser(user);
     }
 }
