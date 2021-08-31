@@ -22,4 +22,10 @@ public class UserService {
     public void addUser(User user) {
         userRepository.save(user);
     }
+
+    public User deleteUser(long id) {
+        User user = userRepository.getById(id);
+        userRepository.delete(user);
+        return user;
+    }
 }
