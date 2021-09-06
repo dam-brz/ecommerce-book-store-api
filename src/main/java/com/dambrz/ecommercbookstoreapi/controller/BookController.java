@@ -29,4 +29,9 @@ public class BookController {
         bookService.uploadImage(file);
     }
 
+    @PostMapping
+    public void createBook(@RequestBody Book book) {
+        bookService.createBook(book);
+    }
+
 }

@@ -26,4 +26,10 @@ public class BookService {
     public void uploadImage(MultipartFile file) throws IOException {
         this.imageBytes = file.getBytes();
     }
+
+    public void createBook(Book book) {
+        book.setPicByte(this.imageBytes);
+        bookRepository.save(book);
+        this.imageBytes = null;
+    }
 }
