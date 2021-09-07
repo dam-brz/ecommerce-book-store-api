@@ -29,4 +29,13 @@ public class BookController {
         bookService.uploadImage(file);
     }
 
+    @PostMapping
+    public void createBook(@RequestBody Book book) {
+        bookService.createBook(book);
+    }
+
+    @DeleteMapping(path = { "/{id}"})
+    public void deleteBook(@PathVariable("id") long id) {
+        bookService.deleteBook(id);
+    }
 }
