@@ -32,4 +32,8 @@ public class BookService {
         bookRepository.save(book);
         this.imageBytes = null;
     }
+
+    public void deleteBook(long id) {
+        bookRepository.deleteById(id);
+    }
 }
